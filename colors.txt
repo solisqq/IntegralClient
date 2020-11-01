@@ -1,0 +1,5 @@
+hover menu color:  #282828
+button border: rgb(85,150,255)
+nice purple pinPoint bg: rgb(31, 34, 68); border:  rgb(20, 19, 50);
+
+4px solid rgb(34, 98, 108);

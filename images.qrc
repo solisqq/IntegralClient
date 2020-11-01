@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>img/data.png</file>
+        <file>img/error.png</file>
+        <file>img/warning.png</file>
+        <file>img/hand.png</file>
+        <file>img/save.png</file>
+        <file>img/settings.png</file>
+        <file>img/add.png</file>
+        <file>img/lock.png</file>
+        <file>img/nosafety.png</file>
+        <file>img/unlock.png</file>
+        <file>img/minus.png</file>
+        <file>img/key.png</file>
+        <file>img/data2.png</file>
+    </qresource>
+    <qresource prefix="/bg">
+        <file>img/mapa.png</file>
+    </qresource>
+    <qresource prefix="/schemes">
+        <file>img/house.jpg</file>
+        <file>img/house2.png</file>
+        <file>img/kkt.jpg</file>
+        <file>img/laskarzew.jpg</file>
+        <file>img/saz.jpg</file>
+        <file>img/ssp.jpg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsWidget</class>
+ <widget class="QWidget" name="SettingsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>276</width>
+    <height>486</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel {
+	color:white;
+	font-size:12px;
+}
+
+QLabel::disabled{
+	color: rgb(171, 171, 171);
+	font-size:12px;
+}
+QCheckBox {
+	color:white;
+	font-weight:500;
+}
+QCheckBox::indicator:unchecked {
+	background-color:rgb(255, 255, 255);
+	border: 2px solid rgb(45, 45, 45);
+	border-radius: 3px;
+	width: 11px;
+	height: 11px;
+}
+
+QCheckBox::indicator:checked {
+	background-color:rgb(50, 167, 24);
+	border: 2px solid rgb(45, 45, 45);
+	border-radius: 3px;
+	width: 11px;
+	height: 11px;
+}
+
+QCheckBox::disabled {
+	color:rgb(171, 171, 171);
+}
+QPushButton {
+	background-color: rgb(30, 30, 30);
+	border: 1px solid rgb(85, 150, 255);
+	color: rgb(85, 150, 255);
+	padding: 4px 10px;
+	font: 75 10pt &quot;Segoe UI&quot;;
+	font-weight: 500;
+}
+QPushButton::hover {
+	background-color: rgb(85, 150, 255);
+	border: 1px solid rgb(30, 30, 30);
+	font: 75 10pt &quot;Segoe UI&quot;;
+	color: rgb(30, 30, 30);
+	border-radius:5px;
+	font-weight: 500;
+}
+
+QPushButton::disabled {
+	color:rgb(30, 47, 103);
+	background-color:rgb(85, 106, 132);
+	border: 1px solid rgb(7, 23, 59);
+	border-radius: 10px;
+	font-size: 14px;
+}
+
+QLineEdit::disabled {
+	background-color: rgb(181, 181, 181);
+}
+QLineEdit::enabled {
+	font-size: 11px;
+	padding: 5px 10px;
+	border: 1px solid rgb(80, 80, 80);
+	border-radius: 4px;
+	background-color:  rgb(60,60,60);
+	color: rgb(200, 200, 200);
+}
+
+QLineEdit::hover {
+	border: 1px solid rgb(120, 120, 120);
+	border-radius: 4px;
+	background-color:  rgb(80,80,80);
+}
+
+QLineEdit::focus {
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 4px;
+	background-color:  rgb(70,70,70);
+}
+
+#widgetCont {
+	background-color: #282828;
+	border-left: 2px solid rgb(85, 150, 255);
+}
+
+
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widgetCont" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1,0">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">font-size: 18px;
+font-weight:500;</string>
+        </property>
+        <property name="text">
+         <string>Ustawienia</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignTop">
+       <widget class="QWidget" name="contentWidget" native="true">
+        <layout class="QVBoxLayout" name="contentLayout">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <property name="leftMargin">
+          <number>40</number>
+         </property>
+         <property name="topMargin">
+          <number>20</number>
+         </property>
+         <property name="rightMargin">
+          <number>20</number>
+         </property>
+         <property name="bottomMargin">
+          <number>20</number>
+         </property>
+        </layout>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignBottom">
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="leftMargin">
+          <number>50</number>
+         </property>
+         <property name="rightMargin">
+          <number>50</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="setBtn">
+           <property name="text">
+            <string>SET</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="saveBtn">
+           <property name="text">
+            <string>SAVE</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

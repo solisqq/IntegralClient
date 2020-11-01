@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InputEditDialog</class>
+ <widget class="QDialog" name="InputEditDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>302</width>
+    <height>245</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel {
+	color:white;
+	font-size:12px;
+}
+
+QLabel::disabled{
+	color: rgb(171, 171, 171);
+	font-size:12px;
+}
+QCheckBox {
+	color:white;
+	font-weight:500;
+}
+QCheckBox::indicator:unchecked {
+	background-color:rgb(255, 255, 255);
+	border: 2px solid rgb(45, 45, 45);
+	border-radius: 3px;
+	width: 11px;
+	height: 11px;
+}
+
+QCheckBox::indicator:checked {
+	background-color:rgb(50, 167, 24);
+	border: 2px solid rgb(45, 45, 45);
+	border-radius: 3px;
+	width: 11px;
+	height: 11px;
+}
+
+QCheckBox::disabled {
+	color:rgb(171, 171, 171);
+}
+QPushButton {
+	background-color: rgb(30, 30, 30);
+	border: 1px solid rgb(85, 150, 255);
+	color: rgb(85, 150, 255);
+	padding: 4px 10px;
+	font: 75 10pt &quot;Segoe UI&quot;;
+	font-weight: 500;
+}
+QPushButton::hover {
+	background-color: rgb(85, 150, 255);
+	border: 1px solid rgb(30, 30, 30);
+	font: 75 10pt &quot;Segoe UI&quot;;
+	color: rgb(30, 30, 30);
+	border-radius:5px;
+	font-weight: 500;
+}
+
+QPushButton::disabled {
+	color:rgb(30, 47, 103);
+	background-color:rgb(85, 106, 132);
+	border: 1px solid rgb(7, 23, 59);
+	border-radius: 10px;
+	font-size: 14px;
+}
+
+QLineEdit::disabled {
+	background-color: rgb(181, 181, 181);
+}
+QLineEdit::enabled {
+	font-size: 11px;
+	padding: 5px 10px;
+	border: 1px solid rgb(80, 80, 80);
+	border-radius: 4px;
+	background-color:  rgb(60,60,60);
+	color: rgb(200, 200, 200);
+}
+
+QLineEdit::hover {
+	border: 1px solid rgb(120, 120, 120);
+	border-radius: 4px;
+	background-color:  rgb(80,80,80);
+}
+
+QLineEdit::focus {
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 4px;
+	background-color:  rgb(70,70,70);
+}
+
+#widgetEditDialog {
+	border: 8px solid rgb(40, 80, 150);
+	background-color: rgb(47, 47, 47);
+	border-radius: 10px;
+}
+
+#widgetEditDialog2 {
+	border: 1px solid rgb(57, 57, 57);
+	background-color: rgb(50, 50, 50);
+	border-radius: 10px;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widgetEditDialog" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="leftMargin">
+       <number>15</number>
+      </property>
+      <property name="topMargin">
+       <number>15</number>
+      </property>
+      <property name="rightMargin">
+       <number>15</number>
+      </property>
+      <property name="bottomMargin">
+       <number>15</number>
+      </property>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">padding: 6px;
+color: rgb(116, 176, 255);
+font-size:15px;
+font-weight:500;</string>
+        </property>
+        <property name="text">
+         <string>Ustawienia wejścia</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widgetEditDialog2" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QWidget" name="widget_2" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,3">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Nazwa</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="nameLineEdit"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget_3" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
+            <item alignment="Qt::AlignLeft">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>ID wejścia</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="idComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="currentIndex">
+               <number>-1</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget_4" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,3">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Typ czujnika</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="typeComboBox">
+              <item>
+               <property name="text">
+                <string>Common</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>PIR</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>TEMP_LOW</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>TEMP_HIGH</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>KONTAKTRON</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDialogButtonBox" name="buttonBox">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="standardButtons">
+         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>InputEditDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>InputEditDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DatabaseViewWidget</class>
+ <widget class="QWidget" name="DatabaseViewWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>675</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0,1">
+      <item alignment="Qt::AlignRight">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Wyświetl log od dnia:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateTimeEdit" name="lowDateTime"/>
+      </item>
+      <item alignment="Qt::AlignRight">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>do:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateTimeEdit" name="highDateTime"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="searchBtn">
+     <property name="text">
+      <string>Przeszukaj baze danych</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableView" name="tableView">
+     <property name="minimumSize">
+      <size>
+       <width>800</width>
+       <height>600</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableView
+{
+    alternate-background-color: rgb(60, 60, 60);
+    background-color: rgb(60, 60, 60);
+    gridline-color: rgb(50, 50, 50);
+    color: white;
+	border: 1px solid rgb(55,55,55);
+	border-radius:10px;
+}
+QTableView::item 
+{   
+    color: white;        
+}
+
+QTableView::item:focus
+{   
+    color: white;
+    background: rgb(56, 56, 56);          
+}        
+QTableView::item:selected
+{   
+    color: white;
+    background: rgb(56, 56, 56);            
+}
+
+QHeaderView::section {
+    background-color: rgb(46, 109, 226);
+    padding: 8px;
+    border: 1px solid rgb(6, 18, 57);
+    font-size: 11pt;
+	border-style: none;
+	border: 1px solid rgb(22, 86, 223);
+	color: white;
+	font-weight: 500;
+}
+
+QHeaderView::section:horizontal
+{
+    border-top: 0;
+}
+
+QHeaderView::section:vertical
+{
+    border-left: 0;
+}</string>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

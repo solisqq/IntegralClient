@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Malfunction</class>
+ <widget class="QWidget" name="Malfunction">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>21</width>
+    <height>16</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QCheckBox{
+	color:white;
+}
+QCheckBox::indicator:checked {
+	background-color:rgb(108, 0, 0);
+	border: 2px solid rgb(42, 42, 45);
+	border-radius: 3px;
+	width: 11px;
+	height: 11px;
+}
+
+QCheckBox::indicator:unchecked {
+	background-color:rgb(50, 167, 24);
+	border: 2px solid rgb(42, 42, 45);
+	border-radius: 3px;
+	width: 11px;
+	height: 11px;
+}
+
+QCheckBox::disabled {
+	color:rgb(171, 171, 171);
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
