@@ -14,7 +14,7 @@ Database::Database(QObject *parent) : QObject(parent)
     db.setDatabaseName("main");
     db.setUserName("postgres");
     db.setPort(5432);
-    db.setPassword("root");
+    db.setPassword("zalfon19");
     if(!db.open()){
         auto problemDialog = new InfoDialog(InfoDialog::Warning, "Baza danych", "Aplikacja napotkała na problem z połączeniem z bazą danych", nullptr, true);
         problemDialog->show();

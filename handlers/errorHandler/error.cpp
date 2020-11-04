@@ -61,5 +61,8 @@ Error *Error::fromSQL(const QSqlRecord &record)
     toRet->noticed = record.value(5).toBool();
     toRet->showInBar = record.value(7).toBool();
     toRet->clicked = record.value(8).toBool();
+    if(record.value(9).toBool()) {
+        toRet->priority = Priority::CriticalError;
+    }
     return toRet;
 }

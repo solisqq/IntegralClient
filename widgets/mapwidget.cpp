@@ -31,6 +31,11 @@ void MapWidget::setInputsCount(int count) {
     }
 }
 
+void MapWidget::setDbID(int id)
+{
+    dbID=id;
+}
+
 QString MapWidget::getBackgroundPath() const
 {
     return availableBackgrounds.at(bgId);
@@ -133,6 +138,8 @@ void MapWidget::saveInput(Inputs &_input)
         database->updateInput(_input);
 }
 
+
+
 MapWidget::~MapWidget()
 {
     delete ui;
@@ -154,7 +161,6 @@ void MapWidget::resizeEvent(QResizeEvent *event)
 
 void MapWidget::updateInputStatus(const QList<int> &items)
 {
-
     foreach(auto input, inputs) {
         bool alarm=false;
         for(auto it=items.begin(); it!=items.end(); ++it) {
@@ -179,6 +185,39 @@ void MapWidget::clearLayout(QLayout *layoutt) {
         {
             delete item->widget();
             delete item;
+        }
+    }
+}
+
+void MapWidget::on_pushButton_clicked()
+{
+    auto dialog = new QDialog(this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    dialog->setLayout(new QHBoxLayout());
+    inputsParse = new QLineEdit(dialog);
+    dialog->layout()->addWidget(inputsParse);
+    connect(dialog,&QDialog::finished, this, &MapWidget::parseInputsToDB);
+    dialog->show();
+}
+
+void MapWidget::parseInputsToDB()
+{
+    //Syg alar 1 stop,1,300,40|Syg alar 2 stop,2,300,120|Sygnal wyladowan,3,300,200|Uszk. centrl. Poż,4,300,280|Niska temp.,7,300,360|Wysoka temp.,8,300,440
+    if(inputsParse!=nullptr) {
+        QStringList lines = inputsParse->text().split("|");
+        for(auto line: lines) {
+            QStringList items = line.split(",");
+            if(items.count()>=4) {
+                QSqlQuery querry;
+                querry.exec("""INSERT INTO inputs (name,inputid,connectionid,posx,posy,type) VALUES ('"""+
+                            items.at(0)+"""','"""+
+                            items.at(1)+"""',"""+
+                            QString::number(dbID)+""","""+
+                            items.at(2)+""","""+
+                            items.at(3)+""",0) RETURNING id;""");
+                qDebug()<<querry.lastError();
+            }
+
         }
     }
 }

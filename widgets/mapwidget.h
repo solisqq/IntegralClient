@@ -26,6 +26,8 @@ class MapWidget : public QWidget, public AuthorizationInterface
     QSize prevSize;
     QList<TinyInput*> tinyInputs;
     QStringList availableBackgrounds;
+    QLineEdit* inputsParse=nullptr;
+    int dbID=-1;
 public:
     explicit MapWidget(QWidget *parent = nullptr);
     ~MapWidget() override;
@@ -36,7 +38,7 @@ public:
     QStringList getAvailableBackgrounds() const;
     int getBackgroundId() const;
     void setInputsCount(int count);
-
+    void setDbID(int id);
     MalfunctionWidget &getMalfunctionWidget();
 protected:
     void mousePressEvent(QMouseEvent *event) override;
@@ -47,6 +49,8 @@ private slots:
     void on_addButton_clicked();
     void showEditDialog(Inputs &_input);
     void saveInput(Inputs &_input);
+    void parseInputsToDB();
+    void on_pushButton_clicked();
 
 public slots:
     void setBackground(int id);

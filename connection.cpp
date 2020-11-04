@@ -1,8 +1,7 @@
 #include "connection.h"
 #include "ui_connection.h"
 #include "handlers/errorHandler/errorstatus.h"
-
-#include <DBRequest.h>
+#include "dbrequest.h"
 #include <QDirIterator>
 
 #include <dialogs/infodialog.h>
@@ -62,7 +61,7 @@ Connection::Connection(QWidget *parent) :
 }
 
 void Connection::Send(Packet *packetToSend) {
-    qDebug()<<packetToSend->getBytes();
+
     if(!packetsList.contains(packetToSend)) packetsList.append(packetToSend);
 
     /*if(socket->state()==QAbstractSocket::ConnectedState) {
@@ -88,12 +87,17 @@ void Connection::setBackgroundID(int id)
 void Connection::checkState()
 {
     QSqlQueryModel *model = getDatabase()->getUpdate(dbID);
-    if(model->record(0).value(3).toString()!="1") handleConnectionLost();
-    else ui->zonesListWidget->connectionLost(false);
+    if(model->record(0).value(3).toString()!="1") {
+        handleConnectionLost();
+        return;
+    }
+    else {
+        ui->zonesListWidget->connectionLost(false);
+    }
     ui->zonesListWidget->updateArm(intListFromString(model->record(0).value(1).toString(), ','));
     ui->zonesListWidget->updateAlarms(intListFromString(model->record(0).value(0).toString(), ','));
     getMapWidget().getMalfunctionWidget().setStates(intListFromString(model->record(0).value(2).toString(),','));
-    getMapWidget().updateInputStatus(intListFromString(model->record(0).value(3).toString(),','));
+    getMapWidget().updateInputStatus(intListFromString(model->record(0).value(4).toString(),','));
 
 }
 
@@ -140,6 +144,7 @@ Database *Connection::getDatabase() const
 void Connection::setID(int id)
 {
     dbID=id;
+    getMapWidget().setDbID(id);
     this->setVersion(database->getVersion(id));
 }
 
