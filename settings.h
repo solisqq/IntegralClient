@@ -4,8 +4,8 @@
 #define APP_VERSION 1.4A
 #define PRODUCTION
 
-//#define WINDOWS_OS  //WINDOWS UNCOMMENT
-#define LINUX_OS  //LINUX UNCOMMENT
+#define WINDOWS_OS  //WINDOWS UNCOMMENT
+//#define LINUX_OS  //LINUX UNCOMMENT
 #define DISK_PROTECTION_OFF true
 
 #define minCompare(x,y) x<y ? x : y
